@@ -5,7 +5,7 @@ import axios from "axios";
 import Product from "../components/Product";
 
 function Cart() {
-  const { cart, setCart } = useContext(CartsContext);
+  const { cart } = useContext(CartsContext);
   // Fetching cart value/setter from the context
 
   const [products, setProducts] = useState([]);
@@ -21,6 +21,10 @@ function Cart() {
   };
   // Function to fetch products from API
 
+  const fetchItemData = (id) => {
+    return products.filter((item, index) => item.id === id)[0]
+  } 
+
   useEffect(() => {
     fetchProducts();
   }, []);
@@ -32,11 +36,7 @@ function Cart() {
         {products.length === 0
           ? "Loading..."
           : cart.map((item, index) => {
-              products
-                .filter((product) => product.id === item)
-                .map((data) => {
-                  return <Product key={index} data={data} />;
-                });
+                  return <Product key={index} data={fetchItemData(item)} />;
             })}
       </div>
     </div>
