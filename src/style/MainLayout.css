@@ -1,0 +1,11 @@
+._MainLayout{
+    /* background-color: grey; */
+    width: 100%;
+    min-height: 100vh;
+    padding: 0!important;
+    margin: 0!important;
+}
+._MainLayout .spacer{
+    margin: 2rem 0px;
+    display: block;
+}

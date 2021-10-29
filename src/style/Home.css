@@ -1,0 +1,12 @@
+.__Home{
+    /* background-color: blue; */
+    width: 100%;
+    height: 100%;
+}
+.productContainer{
+    width: 100%;
+    height: inherit;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
