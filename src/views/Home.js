@@ -24,7 +24,7 @@ function Home() {
   return (
     <div className="__Home">
       <div className="productContainer">
-        {!products
+        {products.length===0
           ? "Loading..."
           : products.map((product, index) => {
               return <Product key={index} data={product} />;
